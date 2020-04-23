@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <!-- Logon Definition -->
+    <definition name="logon-definition"
+                template="/WEB-INF/views/tiles/layouts/admin/logonLayout.jsp">
+        <put-attribute name="title" value="Mechanic Community"/>
+        <put-attribute name="logonHeader" value="/WEB-INF/views/tiles/template/admin/logon/logonHeader.jsp"/>
+        <put-attribute name="logonFooter" value="/WEB-INF/views/tiles/template/admin/logon/logonFooter.jsp"/>
+        <put-attribute name="body" value=""/>
+    </definition>
+
+
+    <!-- Home Page -->
+    <definition name="home" extends="logon-definition">
+        <put-attribute name="title" value="Welcome"/>
+        <put-attribute name="body" value="/WEB-INF/views/pages/admin/home.jsp"/>
+    </definition>
+
+    <!-- Base Definition -->
+    <definition name="base-definition"
+                template="/WEB-INF/views/tiles/layouts/admin/defaultLayout.jsp">
+        <put-attribute name="title" value="Mechanic Community"/>
+        <put-attribute name="menu" value="/WEB-INF/views/tiles/template/admin/default/defaultMenu.jsp"/>
+        <put-attribute name="navbar" value="/WEB-INF/views/tiles/template/admin/default/defaultNavBar.jsp"/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/views/tiles/template/admin/default/defaultFooter.jsp"/>
+    </definition>
+
+    <!-- Dashboard Page -->
+    <definition name="dashboard" extends="base-definition">
+        <put-attribute name="title" value="Dashboard"/>
+        <put-attribute name="body" value="/WEB-INF/views/pages/admin/dashboard.jsp"/>
+    </definition>
+
+    <!-- User Page -->
+    <definition name="user" extends="base-definition">
+        <put-attribute name="title" value="User"/>
+        <put-attribute name="body" value="/WEB-INF/views/pages/admin/user.jsp"/>
+    </definition>
+
+    <!-- Table Page -->
+    <definition name="table" extends="base-definition">
+        <put-attribute name="title" value="Table"/>
+        <put-attribute name="body" value="/WEB-INF/views/pages/admin/table.jsp"/>
+    </definition>
+
+    <!-- typography Page -->
+    <definition name="typography" extends="base-definition">
+        <put-attribute name="title" value="Typography"/>
+        <put-attribute name="body" value="/WEB-INF/views/pages/admin/typography.jsp"/>
+    </definition>
+
+    <!-- icons Page -->
+    <definition name="icons" extends="base-definition">
+        <put-attribute name="title" value="Icons"/>
+        <put-attribute name="body" value="/WEB-INF/views/pages/admin/icons.jsp"/>
+    </definition>
+
+    <!-- maps Page -->
+    <definition name="maps" extends="base-definition">
+        <put-attribute name="title" value="Maps"/>
+        <put-attribute name="body" value="/WEB-INF/views/pages/admin/maps.jsp"/>
+    </definition>
+
+    <!-- notifications Page -->
+    <definition name="notifications" extends="base-definition">
+        <put-attribute name="title" value="Notifications"/>
+        <put-attribute name="body" value="/WEB-INF/views/pages/admin/notifications.jsp"/>
+    </definition>
+
+    <!-- Users-List Page -->
+    <definition name="*-*" extends="base-definition">
+        <put-attribute name="title" value="{1}-{2}"/>
+        <put-attribute name="body" value="/WEB-INF/views/pages/platform/{1}/{1}-{2}.jsp"/>
+    </definition>
+
+</tiles-definitions>
