@@ -11,6 +11,7 @@ import org.springframework.security.access.expression.method.MethodSecurityExpre
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
 /**
  * Created by Syed.
  */
@@ -37,6 +38,7 @@ public class WebSocketConfig implements WebMvcConfigurer {
                 .and()
                 .httpBasic();
     }
+
     @Bean
     public MethodSecurityExpressionHandler methodSecurityExpressionHandler() {
         DefaultMethodSecurityExpressionHandler handler = new DefaultMethodSecurityExpressionHandler();

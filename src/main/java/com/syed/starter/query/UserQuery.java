@@ -34,19 +34,20 @@ public class UserQuery {
      * Save new User.
      *
      * Invoke with:
-     *  mutation NewUserMutation{
-     *       	createUser(
-     *       			user:{
-     *               username: "syed test",
-     *               password:"123"
-     *       				address:{ country: "Australia", city: "Melbourne", streetAndNumber: "Random Street", postalCode: "4563"},
-     *               roles: [{role:ROLE_ADMIN},{role:ROLE_USER}]
-     *                                      }
-     *       			)
-     *                {
-     *       		id, username, address{streetAndNumber}
-     *        }
-     * }
+     * mutation{
+     *             	createUser(
+     *             			user:{
+     *                     username: "syed test",
+     *                     password:"123",
+     *                     enabled:true,
+     *             				address:{ country: "Australia", city: "Melbourne", streetAndNumber: "Random Street", postalCode: "4563"},
+     *                     roles: [{role:ROLE_ADMIN},{role:ROLE_USER}]
+     *                                            }
+     *             			)
+     *                      {
+     *             		id, username, address{streetAndNumber}
+     *              }
+     *       }
      *
      * @param user
      * @return
@@ -149,7 +150,7 @@ public class UserQuery {
      *      }
      *
      * Invoke with:
-     * {getTest(name:"test")}
+     * {getTest(username:"test")}
      *
      * @param username
      * @return

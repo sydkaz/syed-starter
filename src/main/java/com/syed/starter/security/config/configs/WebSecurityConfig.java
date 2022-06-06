@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
 /**
  * Created by Syed.
  */
@@ -35,14 +36,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
                 .antMatchers("/graphql/**").permitAll()
-                .antMatchers( "/greeting").permitAll()
-                .antMatchers( "/api/auth/admin/**").permitAll()
-                .antMatchers( "/admin/**").permitAll()
-                .antMatchers( "/**").permitAll()
+                .antMatchers("/greeting").permitAll()
+                .antMatchers("/api/auth/admin/**").permitAll()
+                .antMatchers("/admin/**").permitAll()
+                .antMatchers("/**").permitAll()
                 .anyRequest().authenticated();
-                httpSecurity.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+        httpSecurity.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
     }
-
 
 
 }
